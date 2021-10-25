@@ -73,8 +73,8 @@ fun HomeScreen() {
 fun AppBar() {
     Row(
         Modifier
-            .height(48.dp)
-            .padding(16.dp),
+            .padding(16.dp)
+            .height(48.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
