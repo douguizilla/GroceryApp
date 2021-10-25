@@ -8,6 +8,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.FavoriteBorder
+import androidx.compose.material.icons.outlined.Notifications
 import androidx.compose.material.icons.rounded.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -99,6 +101,15 @@ fun AppBar() {
                 .weight(1f)
                 .fillMaxHeight()
         )
+        Spacer(modifier = Modifier.width(8.dp))
+        IconButton(onClick = { }) {
+            Icon(imageVector = Icons.Outlined.FavoriteBorder, contentDescription = "", tint = Color.White)
+        }
+        IconButton(onClick = { }) {
+            Icon(imageVector = Icons.Outlined.Notifications, contentDescription = "", tint = Color.White)
+        }
+
+
     }
 }
 
