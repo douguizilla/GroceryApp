@@ -73,7 +73,7 @@ fun HomeScreen() {
 fun AppBar() {
     Row(
         Modifier
-            .fillMaxHeight()
+            .height(48.dp)
             .padding(16.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween
@@ -107,3 +107,4 @@ fun Content(paddingValues: PaddingValues) {
 
 }
 
+//video https://www.youtube.com/watch?v=pFZO5olP6HU&t=63 min 3:16
