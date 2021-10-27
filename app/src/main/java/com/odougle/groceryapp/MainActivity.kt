@@ -19,6 +19,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -135,7 +136,7 @@ fun Header() {
     Card(
         Modifier
             .height(64.dp)
-            .padding(16.dp),
+            .padding(horizontal = 16.dp),
         elevation = 4.dp,
         shape = RoundedCornerShape(8.dp)
     ) {
@@ -144,15 +145,35 @@ fun Header() {
             verticalAlignment = Alignment.CenterVertically
         ) {
             QrButton()
+
             VerticalDivider()
-            Row (
-                Modifier
-                    .fillMaxHeight()
-                    .weight(1f)
-                    .clickable { }
-                    .padding(horizontal = 8.dp)
-                    ){
-                Icon(painter = painterResource(id = R.drawable.ic_money), contentDescription = "")
+            Row(Modifier
+                .fillMaxHeight()
+                .weight(1f)
+                .clickable { }
+                .padding(horizontal = 8.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Icon(painter = painterResource(id = R.drawable.ic_money), contentDescription = "", tint = Color(0xFF6FCF97))
+                Column(Modifier.padding(8.dp)) {
+                    Text(text = "$120", fontWeight = FontWeight.Bold, fontSize = 16.sp)
+                    Text(text = "Top Up", color = MaterialTheme.colors.primary, fontSize = 12.sp)
+                }
+            }
+
+            VerticalDivider()
+            Row(Modifier
+                .fillMaxHeight()
+                .weight(1f)
+                .clickable { }
+                .padding(horizontal = 8.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Icon(painter = painterResource(id = R.drawable.ic_coin), contentDescription = "", tint = MaterialTheme.colors.primary)
+                Column(Modifier.padding(8.dp)) {
+                    Text(text = "$10", fontWeight = FontWeight.Bold, fontSize = 16.sp)
+                    Text(text = "Points", color = Color.LightGray, fontSize = 12.sp)
+                }
             }
         }
     }
