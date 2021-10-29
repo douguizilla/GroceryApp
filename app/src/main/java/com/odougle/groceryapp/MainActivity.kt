@@ -136,6 +136,8 @@ fun Content(paddingValues: PaddingValues) {
         Promotions()
         Spacer(modifier = Modifier.height(16.dp))
         CategorySection()
+        Spacer(modifier = Modifier.height(16.dp))
+        BestSellerSection()
     }
 }
 
@@ -375,5 +377,9 @@ fun CategoryButton(
     }
 }
 
+@Composable
+fun BestSellerSection(){
+
+}
 
 //video https://www.youtube.com/watch?v=pFZO5olP6HU&t=63 min 3:16
