@@ -234,6 +234,18 @@ fun Promotions() {
                 backgroundColor = MaterialTheme.colors.primary
             )
         }
+
+        item {
+            PromotionItem(
+                imagePainter = painterResource(id = R.drawable.item_meat),
+                title = "Meat",
+                subtitle = "Discount",
+                header = "20%",
+                backgroundColor = Color(0xff6EB6F5)
+            )
+        }
+
+
     }
 }
 
