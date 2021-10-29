@@ -226,7 +226,13 @@ fun Promotions() {
         horizontalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         item {
-            PromotionItem(imagePainter = painterResource(id = R.drawable.promotion))
+            PromotionItem(
+                imagePainter = painterResource(id = R.drawable.promotion),
+                title = "Fruit",
+                subtitle = "Start @",
+                header = "$1",
+                backgroundColor = MaterialTheme.colors.primary
+            )
         }
     }
 }
@@ -265,15 +271,15 @@ fun PromotionItem(
                     color = Color.White,
                     fontWeight = FontWeight.Bold
                 )
-                Image(
-                    painter = imagePainter, contentDescription = "",
-                    modifier = Modifier
-                        .fillMaxHeight()
-                        .weight(1f),
-                    alignment = Alignment.CenterEnd,
-                    contentScale = ContentScale.Crop
-                )
             }
+            Image(
+                painter = imagePainter, contentDescription = "",
+                modifier = Modifier
+                    .fillMaxHeight()
+                    .weight(1f),
+                alignment = Alignment.CenterEnd,
+                contentScale = ContentScale.Crop
+            )
         }
     }
 }
