@@ -357,21 +357,21 @@ fun CategoryButton(
 ) {
     Column(
         Modifier
-            .width(64.dp)
+            .width(72.dp)
             .clickable { }
     ) {
         Box(
             Modifier
-                .size(64.dp)
+                .size(72.dp)
                 .background(
                     color = backgroundColor,
                     shape = RoundedCornerShape(12.dp)
                 )
-                .padding(18.dp)
+                .padding(20.dp)
         ){
-            Image(painter = icon, contentDescription = "")
+            Image(painter = icon, contentDescription = "", modifier = Modifier.fillMaxSize())
         }
-        Text(text = text, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center)
+        Text(text = text, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center, fontSize = 12.sp)
     }
 }
 
