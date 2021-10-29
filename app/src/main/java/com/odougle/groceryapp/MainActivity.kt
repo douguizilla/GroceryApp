@@ -325,6 +325,26 @@ fun CategorySection() {
                 icon = painterResource(id = R.drawable.ic_orange),
                 backgroundColor = Color(0xffFEF4E7)
             )
+
+            CategoryButton(
+                text = "Vegetables",
+                icon = painterResource(id = R.drawable.ic_veg),
+                backgroundColor = Color(0xffFEF4E7)
+            )
+
+            CategoryButton(
+                text = "Fruits",
+                icon = painterResource(id = R.drawable.ic_orange),
+                backgroundColor = Color(0xffFEF4E7)
+            )
+
+            CategoryButton(
+                text = "Fruits",
+                icon = painterResource(id = R.drawable.ic_orange),
+                backgroundColor = Color(0xffFEF4E7)
+            )
+
+
         }
     }
 }
