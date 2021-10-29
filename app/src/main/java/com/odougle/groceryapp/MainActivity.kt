@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -16,6 +17,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -128,6 +130,8 @@ fun AppBar() {
 fun Content(paddingValues: PaddingValues) {
     Column(Modifier.padding(paddingValues)) {
         Header()
+        Spacer(modifier = Modifier.height(16.dp))
+        Promotions()
     }
 }
 
@@ -154,7 +158,11 @@ fun Header() {
                 .padding(horizontal = 8.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Icon(painter = painterResource(id = R.drawable.ic_money), contentDescription = "", tint = Color(0xFF6FCF97))
+                Icon(
+                    painter = painterResource(id = R.drawable.ic_money),
+                    contentDescription = "",
+                    tint = Color(0xFF6FCF97)
+                )
                 Column(Modifier.padding(8.dp)) {
                     Text(text = "$120", fontWeight = FontWeight.Bold, fontSize = 16.sp)
                     Text(text = "Top Up", color = MaterialTheme.colors.primary, fontSize = 12.sp)
@@ -169,7 +177,11 @@ fun Header() {
                 .padding(horizontal = 8.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Icon(painter = painterResource(id = R.drawable.ic_coin), contentDescription = "", tint = MaterialTheme.colors.primary)
+                Icon(
+                    painter = painterResource(id = R.drawable.ic_coin),
+                    contentDescription = "",
+                    tint = MaterialTheme.colors.primary
+                )
                 Column(Modifier.padding(8.dp)) {
                     Text(text = "$10", fontWeight = FontWeight.Bold, fontSize = 16.sp)
                     Text(text = "Points", color = Color.LightGray, fontSize = 12.sp)
@@ -204,6 +216,35 @@ fun VerticalDivider() {
             .width(1.dp)
             .height(32.dp)
     )
+}
+
+@Composable
+fun Promotions() {
+    LazyRow(
+        Modifier.height(160.dp),
+        contentPadding = PaddingValues(horizontal = 16.dp),
+        horizontalArrangement = Arrangement.spacedBy(16.dp)
+    ) {
+
+    }
+}
+
+@Composable
+fun CarouselItem(
+    title: String = "",
+    subtitle: String = "",
+    header: String = "",
+    backgroundColor: Color = Color.Transparent,
+    imagePainter: Painter
+){
+    Card(
+        Modifier.width(300.dp),
+        shape = RoundedCornerShape(8.dp),
+        backgroundColor = backgroundColor,
+        elevation = 0.dp
+    ) {
+
+    }
 }
 
 
