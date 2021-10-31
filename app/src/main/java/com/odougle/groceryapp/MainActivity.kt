@@ -379,7 +379,19 @@ fun CategoryButton(
 
 @Composable
 fun BestSellerSection(){
-
+    Column(
+        Modifier.padding(horizontal = 16.dp)
+    ) {
+        Row(
+            Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Text(text = "Best Sellers", style = MaterialTheme.typography.h6)
+            TextButton(onClick = { }) {
+                Text(text = "More", color = MaterialTheme.colors.primary)
+            }
+        }
 }
 
-//video https://www.youtube.com/watch?v=pFZO5olP6HU&t=63 min 3:16
+//video https://www.youtube.com/watch?v=pFZO5olP6HU&t=63 min 13:27
