@@ -3,9 +3,7 @@ package com.odougle.groceryapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -60,7 +58,7 @@ fun DefaultPreview() {
 
 @Composable
 fun HomeScreen() {
-    Box {
+    Box(Modifier.verticalScroll(rememberScrollState())) {
         Image(
             modifier = Modifier
                 .fillMaxWidth()
@@ -69,12 +67,9 @@ fun HomeScreen() {
             contentDescription = "Header Background",
             contentScale = ContentScale.FillWidth
         )
-        Scaffold(
-            topBar = { AppBar() },
-            backgroundColor = Color.Transparent
-        ) { paddingValues ->
-            Content(paddingValues)
-
+        Column {
+            AppBar()
+            Content()
         }
     }
 }
@@ -130,8 +125,8 @@ fun AppBar() {
 }
 
 @Composable
-fun Content(paddingValues: PaddingValues) {
-    Column(Modifier.padding(paddingValues)) {
+fun Content() {
+    Column() {
         Header()
         Spacer(modifier = Modifier.height(16.dp))
         Promotions()
@@ -384,7 +379,9 @@ fun BestSellerSection(){
         Modifier.padding(horizontal = 16.dp)
     ) {
         Row(
-            Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+            Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
