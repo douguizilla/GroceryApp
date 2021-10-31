@@ -392,6 +392,7 @@ fun BestSellerSection(){
                 Text(text = "More", color = MaterialTheme.colors.primary)
             }
         }
+    }
 }
 
 //video https://www.youtube.com/watch?v=pFZO5olP6HU&t=63 min 13:27
