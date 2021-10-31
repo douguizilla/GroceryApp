@@ -384,7 +384,7 @@ fun BestSellerSection(){
         Modifier.padding(horizontal = 16.dp)
     ) {
         Row(
-            Modifier.fillMaxWidth(),
+            Modifier.fillMaxWidth().padding(horizontal = 16.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
@@ -400,7 +400,6 @@ fun BestSellerSection(){
 @Composable
 fun BestSellerItems() {
     LazyRow(
-        Modifier.height(160.dp),
         contentPadding = PaddingValues(horizontal = 16.dp),
         horizontalArrangement = Arrangement.spacedBy(16.dp)
     ){
@@ -412,6 +411,26 @@ fun BestSellerItems() {
                 discountPercent = 10
             )
         }
+
+        item{
+            BestSellerItem(
+                imagePainter = painterResource(id = R.drawable.item_apple),
+                title = "Apple",
+                price = "2.64",
+                discountPercent = 5
+            )
+        }
+
+        item{
+            BestSellerItem(
+                imagePainter = painterResource(id = R.drawable.item_meat),
+                title = "Meat",
+                price = "4.76",
+                discountPercent = 20
+            )
+        }
+
+
     }
 }
 
@@ -425,9 +444,10 @@ fun BestSellerItem(
     Card(
         Modifier
             .width(160.dp)
-            .padding(bottom = 32.dp)
     ) {
-        Column {
+        Column(
+            Modifier.padding(bottom = 32.dp)
+        ) {
             Image(painter = imagePainter, contentDescription = "",
             modifier = Modifier
                 .fillMaxWidth()
