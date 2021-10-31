@@ -404,7 +404,14 @@ fun BestSellerItems() {
         contentPadding = PaddingValues(horizontal = 16.dp),
         horizontalArrangement = Arrangement.spacedBy(16.dp)
     ){
-
+        item{
+            BestSellerItem(
+                imagePainter = painterResource(id = R.drawable.item_lettuce),
+                title = "Iceberg Lettuce",
+                price = "1.99",
+                discountPercent = 10
+            )
+        }
     }
 }
 
